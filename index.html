@@ -3,176 +3,279 @@
   <head>
     <meta charset="UTF-8" />
     <title>Falcon</title>
+    <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section id="leftmenu">
-      <ul class="nav menu">
-        <li>
-          <a href="#">Home</a>
-          <div class="collapse">
-            <ul class="submenu">
-              <li class="menu-item">Dashboard</li>
-              <li class="menu-item">Feed</li>
-              <li class="menu-item">Landing</li>
-            </ul>
-          </div>
-        </li>
-        <li>
-          <a href="#">Pages</a>
-          <div class="collapse">
-            <ul class="submenu">
-              <li class="menu-item">Dashboard</li>
-              <li class="menu-item">Feed</li>
-              <li class="menu-item">Landing</li>
-            </ul>
-          </div>
-        </li>
-        <li>
-          <a href="#">Chat</a>
-          <div class="collapse">
-            <ul class="submenu">
-              <li class="menu-item">Dashboard</li>
-              <li class="menu-item">Feed</li>
-              <li class="menu-item">Landing</li>
-            </ul>
-          </div>
-        </li>
-        <li>
-          <a href="#">Kanban</a>
-          <div class="collapse">
-            <ul class="submenu">
-              <li class="menu-item">Dashboard</li>
-              <li class="menu-item">Feed</li>
-              <li class="menu-item">Landing</li>
-            </ul>
-          </div>
-        </li>
-        <li>
-          <a href="#">Calendar</a>
-          <div class="collapse">
-            <ul class="submenu">
-              <li class="menu-item">Dashboard</li>
-              <li class="menu-item">Feed</li>
-              <li class="menu-item">Landing</li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </section>
-    <main id="content">
+    <div class="mainContainer">
       <div id="header">
-        <input type="search" id="search" placeholder="Search" />
+        <div class="header-left">
+          <img
+            src="https://falconreactbs4.prium.me/static/media/falcon.920a9ff0.png"
+            alt=""
+            srcset=""
+          />
+          <h2>falcon</h2>
+        </div>
+
         <div class="header-right">
-          <button class="headerBtn">$</button>
-          <button class="headerBtn">$</button>
-          <button class="headerBtn">$</button>
+          <input type="search" id="search" placeholder="Search" />
+          <div class="button-group">
+            <button class="headerBtn">$</button>
+            <button class="headerBtn">$</button>
+            <button class="headerBtn">$</button>
+          </div>
         </div>
       </div>
-      <div id="page">
-        <div id="timeline">
-          <div id="createpost">
-            <div class="header">
-              <img
-                src="https://falconreactbs4.prium.me/static/media/3.cb95ae1b.jpg"
-                alt=""
-                class="avatar"
-              />
-              <span>Create Post</span>
-            </div>
-            <textarea id="createpost" rows="6"></textarea>
-            <div class="hashtag">
-              <button>Add Hashtag</button>
-              <input type="text" class="input hashtag" />
-            </div>
-            <div class="actions">
-              <div class="typeContainer">
-                <button class="btn btn-flat">Image</button>
-                <button class="btn btn-flat">Event</button>
-                <button class="btn btn-flat">Check In</button>
+
+      <main id="content">
+        <section id="leftmenu">
+          <ul class="nav menu">
+            <li>
+              <a href="#">Home</a>
+              <div class="collapse">
+                <ul class="submenu">
+                  <li class="menu-item">Dashboard</li>
+                  <li class="menu-item">Feed</li>
+                  <li class="menu-item">Landing</li>
+                </ul>
               </div>
-              <div class="share">
-                <button class="btn btn-blue">Share</button>
+            </li>
+            <li>
+              <a href="#">Pages</a>
+              <div class="collapse">
+                <ul class="submenu">
+                  <li class="menu-item">Dashboard</li>
+                  <li class="menu-item">Feed</li>
+                  <li class="menu-item">Landing</li>
+                </ul>
               </div>
-            </div>
-          </div>
-          <div id="posts">
-            <div class="post">
+            </li>
+            <li>
+              <a href="#">Chat</a>
+              <div class="collapse">
+                <ul class="submenu">
+                  <li class="menu-item">Dashboard</li>
+                  <li class="menu-item">Feed</li>
+                  <li class="menu-item">Landing</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="#">Kanban</a>
+              <div class="collapse">
+                <ul class="submenu">
+                  <li class="menu-item">Dashboard</li>
+                  <li class="menu-item">Feed</li>
+                  <li class="menu-item">Landing</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="#">Calendar</a>
+              <div class="collapse">
+                <ul class="submenu">
+                  <li class="menu-item">Dashboard</li>
+                  <li class="menu-item">Feed</li>
+                  <li class="menu-item">Landing</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <div id="page">
+          <div id="timeline">
+            <div id="createpost">
               <div class="header">
-                <div class="avatar">
+                <img
+                  src="https://falconreactbs4.prium.me/static/media/3.cb95ae1b.jpg"
+                  alt=""
+                  class="avatar"
+                />
+                <span>Create Post</span>
+              </div>
+              <textarea id="createpost" rows="6"></textarea>
+              <div class="hashtag">
+                <button>Add Hashtag</button>
+                <input type="text" class="input hashtag" />
+              </div>
+              <div class="actions">
+                <div class="typeContainer">
+                  <button class="btn btn-flat">Image</button>
+                  <button class="btn btn-flat">Event</button>
+                  <button class="btn btn-flat">Check In</button>
+                </div>
+                <div class="share">
+                  <button class="btn btn-blue">Share</button>
+                </div>
+              </div>
+            </div>
+            <div id="posts">
+              <div class="post">
+                <div class="header">
+                  <div class="avatar">
+                    <img
+                      src="https://falconreactbs4.prium.me/static/media/3.cb95ae1b.jpg"
+                      alt=""
+                      class="avatar"
+                    />
+                  </div>
+                  <div class="info">
+                    <span class="info-top">
+                      <span class="text active"> Leonardo Da Vinci</span>
+                      created a post
+                    </span>
+                    <span class="date"> 10 Feb 2023 </span>
+                  </div>
+                </div>
+                <div class="content">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+                  harum numquam suscipit in animi aspernatur cumque possimus at
+                  consectetur, neque, consequatur voluptates laborum dicta
+                  placeat! Quibusdam quos molestiae dolore architecto!
+                </div>
+                <div class="meta">
+                  <div class="countinfo">
+                    <span id="likeCount_post_1">4</span> Likes
+                  </div>
+                  <div class="countinfo">
+                    <span id="commentsCount_post_1">4</span> Comments
+                  </div>
+                </div>
+                <div class="buttons">
+                  <button class="btn btn-like">❤️ Like</button>
+                  <button class="btn btn-like">💬 Comment</button>
+                </div>
+                <div class="sendComment">
                   <img
                     src="https://falconreactbs4.prium.me/static/media/3.cb95ae1b.jpg"
                     alt=""
                     class="avatar"
                   />
+                  <input type="text" class="input comment" />
                 </div>
+              </div>
+              <div class="post">
+                <div class="header">
+                  <div class="avatar">
+                    <img
+                      src="https://falconreactbs4.prium.me/static/media/3.cb95ae1b.jpg"
+                      alt=""
+                      class="avatar"
+                    />
+                  </div>
+                  <div class="info">
+                    <span class="info-top">
+                      <span class="text active"> Leonardo Da Vinci</span>
+                      created a post
+                    </span>
+                    <span class="date"> 10 Feb 2023 </span>
+                  </div>
+                </div>
+                <div class="content">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+                  harum numquam suscipit in animi aspernatur cumque possimus at
+                  consectetur, neque, consequatur voluptates laborum dicta
+                  placeat! Quibusdam quos molestiae dolore architecto!
+                </div>
+                <div class="meta">
+                  <div class="countinfo">
+                    <span id="likeCount_post_1">4</span> Likes
+                  </div>
+                  <div class="countinfo">
+                    <span id="commentsCount_post_1">4</span> Comments
+                  </div>
+                </div>
+                <div class="buttons">
+                  <button class="btn btn-like">❤️ Like</button>
+                  <button class="btn btn-like">💬 Comment</button>
+                </div>
+                <div class="sendComment">
+                  <img
+                    src="https://falconreactbs4.prium.me/static/media/3.cb95ae1b.jpg"
+                    alt=""
+                    class="avatar"
+                  />
+                  <input type="text" class="input comment" />
+                </div>
+              </div>
+              <div class="post">
+                <div class="header">
+                  <div class="avatar">
+                    <img
+                      src="https://falconreactbs4.prium.me/static/media/3.cb95ae1b.jpg"
+                      alt=""
+                      class="avatar"
+                    />
+                  </div>
+                  <div class="info">
+                    <span class="info-top">
+                      <span class="text active"> Leonardo Da Vinci</span>
+                      created a post
+                    </span>
+                    <span class="date"> 10 Feb 2023 </span>
+                  </div>
+                </div>
+                <div class="content">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+                  harum numquam suscipit in animi aspernatur cumque possimus at
+                  consectetur, neque, consequatur voluptates laborum dicta
+                  placeat! Quibusdam quos molestiae dolore architecto!
+                </div>
+                <div class="meta">
+                  <div class="countinfo">
+                    <span id="likeCount_post_1">4</span> Likes
+                  </div>
+                  <div class="countinfo">
+                    <span id="commentsCount_post_1">4</span> Comments
+                  </div>
+                </div>
+                <div class="buttons">
+                  <button class="btn btn-like">❤️ Like</button>
+                  <button class="btn btn-like">💬 Comment</button>
+                </div>
+                <div class="sendComment">
+                  <img
+                    src="https://falconreactbs4.prium.me/static/media/3.cb95ae1b.jpg"
+                    alt=""
+                    class="avatar"
+                  />
+                  <input type="text" class="input comment" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="rightbar">
+            <div id="notification">
+              <span>You have new follower</span>
+            </div>
+            <div id="follow">
+              <div class="personFollow">
+                <div class="avatar"></div>
                 <div class="info">
-                  <span class="info-top">
-                    <span class="text active"> Leonardo Da Vinci</span> created
-                    a post
-                  </span>
-                  <span class="date"> 10 Feb 2023 </span>
+                  <span class="name"> Ali Haydar GÜLEÇ </span>
+                  <button class="followBtn">Follow</button>
+                </div>
+              </div>
+              <div class="personFollow">
+                <div class="avatar"></div>
+                <div class="info">
+                  <span class="name"> Ali Haydar GÜLEÇ </span>
+                  <button class="followBtn">Follow</button>
+                </div>
+              </div>
+              <div class="personFollow">
+                <div class="avatar"></div>
+                <div class="info">
+                  <span class="name"> Ali Haydar GÜLEÇ </span>
+                  <button class="followBtn">Follow</button>
                 </div>
               </div>
             </div>
-            <div class="content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-              harum numquam suscipit in animi aspernatur cumque possimus at
-              consectetur, neque, consequatur voluptates laborum dicta placeat!
-              Quibusdam quos molestiae dolore architecto!
-            </div>
-            <div class="meta">
-              <div class="countinfo">
-                <span id="likeCount_post_1">4</span> Likes
-              </div>
-              <div class="countinfo">
-                <span id="commentsCount_post_1">4</span> Comments
-              </div>
-            </div>
-            <div class="buttons">
-              <button class="btn btn-like">❤️ Like</button>
-              <button class="btn btn-like">💬 Comment</button>
-            </div>
-            <div class="sendComment">
-              <img
-                src="https://falconreactbs4.prium.me/static/media/3.cb95ae1b.jpg"
-                alt=""
-                class="avatar"
-              />
-              <input type="text" class="input comment" />
-            </div>
+            <div id="interests"></div>
           </div>
         </div>
-        <div id="rightbar">
-          <div id="notification">
-            <span>You have new follower</span>
-          </div>
-          <div id="follow">
-            <div class="personFollow">
-              <div class="avatar"></div>
-              <div class="info">
-                <span class="name"> Ali Haydar GÜLEÇ </span>
-                <button class="followBtn">Follow</button>
-              </div>
-            </div>
-            <div class="personFollow">
-              <div class="avatar"></div>
-              <div class="info">
-                <span class="name"> Ali Haydar GÜLEÇ </span>
-                <button class="followBtn">Follow</button>
-              </div>
-            </div>
-            <div class="personFollow">
-              <div class="avatar"></div>
-              <div class="info">
-                <span class="name"> Ali Haydar GÜLEÇ </span>
-                <button class="followBtn">Follow</button>
-              </div>
-            </div>
-          </div>
-          <div id="interests"></div>
-        </div>
-      </div>
-    </main>
+      </main>
+    </div>
   </body>
 </html>
