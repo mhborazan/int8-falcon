@@ -192,6 +192,7 @@ textarea:focus{
 .btn-hashtag {
     background: none;
     height: 40px;
+    width: 140px;
 }
 div.hashtag{
     border-top: 1px ridge gray;
@@ -409,6 +410,11 @@ input.hashtagInput:focus{
     margin:15px;
 }
 
+#footer{
+    display: flex;
+    justify-content: space-between;
+}
+
 @media screen and (max-width: 1200px) {
     .mainContainer,#header{
         width: 1000px;
@@ -445,9 +451,24 @@ input.hashtagInput:focus{
         grid-template-columns: 1fr;
         margin-bottom: 20px;
     }
-    #content{
-        grid-template-columns: 1fr;
-        padding-right: 20px;
-        margin-top: 60px;
+    .searchGroup{
+        display: none;
+    }
+    .header-right{
+        justify-content: flex-end;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .mainContainer,#header,.fixarea{
+        width: 550px;
+    }
+    .typeContainer span{
+        display: none;
+    }
+}
+@media screen and (max-width: 575px){
+    .mainContainer,#header,.fixarea{
+        width: 100%;
     }
 }
