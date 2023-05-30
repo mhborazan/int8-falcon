@@ -5,24 +5,25 @@
     <title>Falcon</title>
     <link rel="stylesheet" href="reset.css"/>
     <link rel="stylesheet" href="style.css"/>
-    <script src="https://kit.fontawesome.com/afe1964061.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <body>
 <div class="mainContainer">
     <div id="header">
         <div class="header-left">
+            <i class="fa-solid fa-bars"></i>
             <img
                     src="https://falconreactbs4.prium.me/static/media/falcon.920a9ff0.png"
                     alt=""
                     srcset=""
             />
-            <h2>falcon</h2>
+            <h4>falcon</h4>
         </div>
 
         <div class="header-right">
             <div class="searchGroup">
                 <i class="fa-solid fa-magnifying-glass searchIcon"></i>
-                <input type="search" id="search" class="typeText" placeholder="Search"/>
+                <input autocomplete="off" type="search" id="search" class="typeText" placeholder="Search"/>
             </div>
             <div class="button-group">
                 <button class="btn btn-icon"><i class="fa-solid fa-moon"></i></button>
@@ -31,12 +32,21 @@
             </div>
         </div>
     </div>
-
-    <main id="content">
+    <div class="fixarea">
         <section id="leftmenu">
             <ul class="nav menu">
+                <li class="active">
+                    <a href="#"><span class="menu-title"><i class="fa-solid fa-house"></i>Home</span> <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="collapse show">
+                        <ul class="submenu">
+                            <li class="menu-item">Dashboard</li>
+                            <li class="menu-item active">Feed</li>
+                            <li class="menu-item">Landing</li>
+                        </ul>
+                    </div>
+                </li>
                 <li>
-                    <a href="#">Home</a>
+                    <a href="#"><span class="menu-title"><i class="fa-solid fa-file"></i>Pages</span> <i class="fa-solid fa-chevron-down"></i></a>
                     <div class="collapse">
                         <ul class="submenu">
                             <li class="menu-item">Dashboard</li>
@@ -46,7 +56,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="#">Pages</a>
+                    <a href="#"><span class="menu-title"><i class="fa-solid fa-comments"></i>Chat</span> <i class="fa-solid fa-chevron-down"></i></a>
                     <div class="collapse">
                         <ul class="submenu">
                             <li class="menu-item">Dashboard</li>
@@ -56,7 +66,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="#">Chat</a>
+                    <a href="#"><span class="menu-title"><i class="fa-solid fa-table"></i>Kanban</span> <i class="fa-solid fa-chevron-down"></i></a>
                     <div class="collapse">
                         <ul class="submenu">
                             <li class="menu-item">Dashboard</li>
@@ -66,17 +76,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="#">Kanban</a>
-                    <div class="collapse">
-                        <ul class="submenu">
-                            <li class="menu-item">Dashboard</li>
-                            <li class="menu-item">Feed</li>
-                            <li class="menu-item">Landing</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a href="#">Calendar</a>
+                    <a href="#"><span class="menu-title"><i class="fa-solid fa-calendar"></i>Calendar</span> <i class="fa-solid fa-chevron-down"></i></a>
                     <div class="collapse">
                         <ul class="submenu">
                             <li class="menu-item">Dashboard</li>
@@ -87,10 +87,13 @@
                 </li>
             </ul>
         </section>
+    </div>
+    <main id="content">
+       
         <div id="page">
             <div id="timeline">
                 <div id="createpost" class="box">
-                    <div class="header">
+                    <div class="cardheader">
                         <img
                                 src="https://falconreactbs4.prium.me/static/media/3.cb95ae1b.jpg"
                                 alt=""
@@ -98,16 +101,16 @@
                         />
                         <span>Create Post</span>
                     </div>
-                    <textarea id="createpostInput" rows="6"></textarea>
+                    <textarea placeholder="Write Post Content" id="createpostInput" rows="4"></textarea>
                     <div class="hashtag">
                         <button class="btn btn-hashtag"><i class="fa-solid fa-plus"></i>&nbsp;Add Hashtag</button>
-                        <input type="text" class="input hashtag"/>
+                        <input type="text" placeholder="Add Hashtag" class="input hashtagInput"/>
                     </div>
                     <div class="actions">
                         <div class="typeContainer">
-                            <button class="btn btn-flat">Image</button>
-                            <button class="btn btn-flat">Event</button>
-                            <button class="btn btn-flat">Check In</button>
+                            <button class="btn btn-flat"><i class="fa-solid fa-image"></i> Image</button>
+                            <button class="btn btn-flat"><i class="fa-solid fa-calendar-plus"></i> Event</button>
+                            <button class="btn btn-flat"><i class="fa-solid fa-location-dot"></i> Check In</button>
                         </div>
                         <div class="share">
                             <button class="btn btn-blue">Share</button>
@@ -116,7 +119,81 @@
                 </div>
                 <div id="posts">
                     <div class="post box">
-                        <div class="header">
+                        <div class="cardheader">
+                            <div class="avatar">
+                                <img
+                                        src="https://falconreactbs4.prium.me/static/media/3.cb95ae1b.jpg"
+                                        alt=""
+                                        class="avatar"
+                                />
+                            </div>
+                            <div class="info">
+                    <span class="info-top">
+                      <span class="text active"> Leonardo Da Vinci</span>
+                      created a post
+                    </span>
+                                <span class="date"> 10 Feb 2023 </span>
+                            </div>
+                        </div>
+                        <div class="content">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+                            harum numquam suscipit in animi aspernatur cumque possimus at
+                            consectetur, neque, consequatur voluptates laborum dicta
+                            placeat! Quibusdam quos molestiae dolore architecto!
+                        </div>
+                        <div class="meta">
+                            <div class="countinfo">
+                                <span id="likeCount_post_1">4</span> Likes
+                            </div>
+                            <div class="countinfo">
+                                <span id="commentsCount_post_1">4</span> Comments
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <button class="btn btn-like">❤️ Like</button>
+                            <button class="btn btn-like">💬 Comment</button>
+                            <button class="btn btn-like">💬 Share</button>
+                        </div>
+                        <div class="sendComment">
+                            <img
+                                    src="https://falconreactbs4.prium.me/static/media/3.cb95ae1b.jpg"
+                                    alt=""
+                                    class="avatar"
+                            />
+                            <input type="text" class="input comment" placeholder="Write Comment"/>
+                        </div>
+                        <div class="comments">
+                            <div class="singleComment">
+                                <img
+                                src="https://falconreactbs4.prium.me/static/media/4.af4fbf41.jpg"
+                                class="avatar small"/>
+                                <div class="commentContent p-10">
+                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptatem omnis explicabo quos officia itaque sequi praesentium eos consectetur ab sunt dolores labore sed autem nulla odit, ea error. Beatae?
+                                </div>
+                            </div> 
+                            <div class="singleComment">
+                                <img
+                                src="https://falconreactbs4.prium.me/static/media/4.af4fbf41.jpg"
+                                class="avatar small"/>
+                                <div class="commentContent p-10">
+                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptatem omnis explicabo quos officia itaque sequi praesentium eos consectetur ab sunt dolores labore sed autem nulla odit, ea error. Beatae?
+                                </div>
+                            </div> 
+                            <div class="singleComment">
+                                <img
+                                src="https://falconreactbs4.prium.me/static/media/4.af4fbf41.jpg"
+                                class="avatar small"/>
+                                <div class="commentContent p-10">
+                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptatem omnis explicabo quos officia itaque sequi praesentium eos consectetur ab sunt dolores labore sed autem nulla odit, ea error. Beatae?
+                                </div>
+                            </div>
+                            
+                            <div class="commentInfo">
+                               Load more comments</div>
+                        </div>
+                    </div>
+                    <div class="post box">
+                        <div class="cardheader">
                             <div class="avatar">
                                 <img
                                         src="https://falconreactbs4.prium.me/static/media/3.cb95ae1b.jpg"
@@ -161,52 +238,7 @@
                         </div>
                     </div>
                     <div class="post box">
-                        <div class="header">
-                            <div class="avatar">
-                                <img
-                                        src="https://falconreactbs4.prium.me/static/media/3.cb95ae1b.jpg"
-                                        alt=""
-                                        class="avatar"
-                                />
-                            </div>
-                            <div class="info">
-                    <span class="info-top">
-                      <span class="text active"> Leonardo Da Vinci</span>
-                      created a post
-                    </span>
-                                <span class="date"> 10 Feb 2023 </span>
-                            </div>
-                        </div>
-                        <div class="content">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                            harum numquam suscipit in animi aspernatur cumque possimus at
-                            consectetur, neque, consequatur voluptates laborum dicta
-                            placeat! Quibusdam quos molestiae dolore architecto!
-                        </div>
-                        <div class="meta">
-                            <div class="countinfo">
-                                <span id="likeCount_post_1">4</span> Likes
-                            </div>
-                            <div class="countinfo">
-                                <span id="commentsCount_post_1">4</span> Comments
-                            </div>
-                        </div>
-                        <div class="buttons">
-                            <button class="btn btn-like">❤️ Like</button>
-                            <button class="btn btn-like">💬 Comment</button>
-                            <button class="btn btn-like">💬 Share</button>
-                        </div>
-                        <div class="sendComment">
-                            <img
-                                    src="https://falconreactbs4.prium.me/static/media/3.cb95ae1b.jpg"
-                                    alt=""
-                                    class="avatar"
-                            />
-                            <input type="text" class="input comment"/>
-                        </div>
-                    </div>
-                    <div class="post box">
-                        <div class="header">
+                        <div class="cardheader">
                             <div class="avatar">
                                 <img
                                         src="https://falconreactbs4.prium.me/static/media/3.cb95ae1b.jpg"
@@ -253,33 +285,35 @@
                 </div>
             </div>
             <div id="rightbar">
-                <div id="notification" class="box">
-                    <span>You have new follower</span>
+                <div id="notification" class="box p-15">
+                    <span class="m-10">You have new follower</span>
                 </div>
-                <div id="follow" class="box">
+                <div id="follow" class="box p-15">
                     <div class="personFollow">
-                        <div class="avatar"></div>
+                        <div class="avatar"><img class="follow-avatar" src="https://falconreactbs4.prium.me/static/media/1.38f0341f.jpg" alt=""></div>
+
                         <div class="info">
                             <span class="name"> Ali Haydar GÜLEÇ </span>
-                            <button class="btn-follow">Follow</button>
+                            <button class="btn-follow"><i class="fa-solid fa-user-plus"></i> Follow</button>
                         </div>
                     </div>
                     <div class="personFollow">
-                        <div class="avatar"></div>
+                        <div class="avatar"><img class="follow-avatar" src="https://falconreactbs4.prium.me/static/media/1.38f0341f.jpg" alt=""></div>
                         <div class="info">
                             <span class="name"> Ali Haydar GÜLEÇ </span>
-                            <button class="btn-follow">Follow</button>
+                            <button class="btn-follow"><i class="fa-solid fa-user-plus"></i> Follow</button>
                         </div>
                     </div>
                     <div class="personFollow">
-                        <div class="avatar"></div>
+                        <div class="avatar"><img class="follow-avatar" src="https://falconreactbs4.prium.me/static/media/1.38f0341f.jpg" alt=""></div>
+
                         <div class="info">
                             <span class="name"> Ali Haydar GÜLEÇ </span>
-                            <button class="btn-follow">Follow</button>
+                            <button class="btn-follow"><i class="fa-solid fa-user-plus"></i> Follow</button>
                         </div>
                     </div>
                 </div>
-                <div id="interests" class="box">
+                <div id="interests" class="box p-15">
                     <h1>Interest</h1>
                     <div class="personFollow">
                         <div class="avatar"></div>
