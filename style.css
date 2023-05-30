@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins:wght@200;300;500;600;400;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
 :root{
     --input-border:#afe7ff;
@@ -12,7 +12,7 @@ body {
 .mainContainer {
     width: 1400px;
     margin: auto;
-   
+
 }
 
 #header {
@@ -68,7 +68,7 @@ img.avatar {
 }
 
 .typeText{
-    width: 40%;
+    width: 300px;
     height: 35px;
     border-radius: 50rem;
     padding:0 5px 0 30px ;
@@ -99,7 +99,7 @@ img.avatar {
     padding: 20px;
     position: fixed;
     width: 280px;
-    
+
 }
 #page {
     display: grid;
@@ -261,7 +261,7 @@ div.hashtag{
 
 .box {
     background-color: white;
-  
+
     box-shadow: 0 5px 10px 0 rgba(50, 50, 100, 0.3);
     border-radius: 7px;
 }
@@ -337,7 +337,7 @@ input.comment:focus{
     align-items: center;
     gap: 20px;
     margin-bottom: 20px;
-    
+
 }
 .personFollow .info{
     width: 100%;
@@ -407,4 +407,47 @@ input.hashtagInput:focus{
 }
 .m-15{
     margin:15px;
+}
+
+@media screen and (max-width: 1200px) {
+    .mainContainer,#header{
+        width: 1000px;
+    }
+    .header-right{
+        padding-right: 30px;
+    }
+    .header-left{
+        padding-left: 10px;
+    }
+    .fixarea{
+        display: none;
+        background-color: #edf2f9;
+        width: 1000px;
+        box-shadow: none;
+        top: 56px;
+        padding-left: 14px;
+    }
+    #leftmenu{
+        padding-right: 20px;
+    }
+    #content{
+        grid-template-columns: 1fr;
+        padding-right: 20px;
+        margin-top: 60px;
+    }
+}
+
+@media screen and (max-width: 991px){
+    .mainContainer,#header,.fixarea{
+        width: 765px;
+    }
+    #page{
+        grid-template-columns: 1fr;
+        margin-bottom: 20px;
+    }
+    #content{
+        grid-template-columns: 1fr;
+        padding-right: 20px;
+        margin-top: 60px;
+    }
 }
