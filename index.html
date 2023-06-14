@@ -5,6 +5,7 @@
     <title>Falcon</title>
     <link rel="stylesheet" href="reset.css"/>
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="testing.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <body>
@@ -143,24 +144,24 @@
                         </div>
                         <div class="meta">
                             <div class="countinfo">
-                                <span id="likeCount_post_1">4</span> Likes
+                                <span id="likeCount_post_1" class="js-like-count">10</span> Likes
                             </div>
                             <div class="countinfo">
-                                <span id="commentsCount_post_1">4</span> Comments
+                                <span class="js-comments-count">3</span> Comments
                             </div>
                         </div>
                         <div class="buttons">
-                            <button class="btn btn-like">❤️ Like</button>
-                            <button class="btn btn-like">💬 Comment</button>
+                            <button class="btn btn-like js-like-btn"><img src="./assets/like button unclicked.png" class="js-like-symbol"alt=""><p class="js-like-p">Like</p></button>
+                            <button class="btn btn-like js-comment-btn">💬 Comment</button>
                             <button class="btn btn-like">💬 Share</button>
                         </div>
-                        <div class="sendComment">
+                        <div class="sendComment js-comment-invisible">
                             <img
                                     src="https://falconreactbs4.prium.me/static/media/3.cb95ae1b.jpg"
                                     alt=""
                                     class="avatar"
                             />
-                            <input type="text" class="input comment" placeholder="Write Comment"/>
+                            <input type="text" class="input comment js-input-comment" placeholder="Write Comment"/>
                         </div>
                         <div class="comments">
                             <div class="singleComment">
@@ -217,15 +218,15 @@
                         </div>
                         <div class="meta">
                             <div class="countinfo">
-                                <span id="likeCount_post_1">4</span> Likes
+                                <span id="likeCount_post_1" class="js-like-count">3</span> Likes
                             </div>
                             <div class="countinfo">
-                                <span id="commentsCount_post_1">4</span> Comments
+                                <span class="js-comments-count">0</span> Comments
                             </div>
                         </div>
                         <div class="buttons">
-                            <button class="btn btn-like">❤️ Like</button>
-                            <button class="btn btn-like">💬 Comment</button>
+                            <button class="btn btn-like js-like-btn"><img src="./assets/like button unclicked.png" class="js-like-symbol"alt=""><p class="js-like-p">Like</p></button>
+                            <button class="btn btn-like js-comment-btn">💬 Comment</button>
                             <button class="btn btn-like">💬 Share</button>
                         </div>
                         <div class="sendComment">
@@ -234,8 +235,9 @@
                                     alt=""
                                     class="avatar"
                             />
-                            <input type="text" class="input comment"/>
+                            <input type="text" class="input comment js-input-comment" placeholder="Write Comment"/>
                         </div>
+                        <div class="comments"></div>
                     </div>
                     <div class="post box">
                         <div class="cardheader">
@@ -262,15 +264,15 @@
                         </div>
                         <div class="meta">
                             <div class="countinfo">
-                                <span id="likeCount_post_1">4</span> Likes
+                                <span id="likeCount_post_1" class="js-like-count">4</span> Likes
                             </div>
                             <div class="countinfo">
-                                <span id="commentsCount_post_1">4</span> Comments
+                                <span class="js-comments-count">0</span> Comments
                             </div>
                         </div>
                         <div class="buttons">
-                            <button class="btn btn-like">❤️ Like</button>
-                            <button class="btn btn-like">💬 Comment</button>
+                            <button class="btn btn-like js-like-btn"><img src="./assets/like button unclicked.png" class="js-like-symbol"alt=""><p class="js-like-p">Like</p></button>
+                            <button class="btn btn-like js-comment-btn">💬 Comment</button>
                             <button class="btn btn-like">💬 Share</button>
                         </div>
                         <div class="sendComment">
@@ -279,8 +281,9 @@
                                     alt=""
                                     class="avatar"
                             />
-                            <input type="text" class="input comment"/>
+                            <input type="text" class="input comment js-input-comment" placeholder="Write Comment"/>
                         </div>
+                        <div class="comments"></div>
                     </div>
                 </div>
             </div>
@@ -372,5 +375,6 @@
 
     </main>
 </div>
+<script src="js-thalia.js"></script>
 </body>
 </html>

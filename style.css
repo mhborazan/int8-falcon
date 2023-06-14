@@ -138,7 +138,7 @@ img.avatar {
 }
 .post {
     display: grid;
-    grid-template-rows: 2fr auto 1fr 2fr 2fr;
+    grid-template-rows: 2fr auto auto 2fr;
     gap: 10px;
 }
 
@@ -323,6 +323,12 @@ div.hashtag{
     justify-content: start;
     gap: 5px;
 }
+ .post > .js-comment-invisible{
+    display: none;
+    
+ }
+
+
 input.comment{
     margin-left: 5px;
     width: 100%;
@@ -356,8 +362,10 @@ input.comment:focus{
 }
 
 .comments{
+    overflow: auto;
     padding-left: 20px;
     padding-right: 20px;
+    max-height: 400px;
 }
 .singleComment{
     display:flex;
@@ -459,6 +467,22 @@ input.hashtagInput:focus{
     font-size: 23pt;
     border-radius: 0 0 5px 5px;
     font-weight: 800;
+}
+.buttons {
+    display: flex;
+}
+.js-like-symbol {
+    margin-right: 3px;
+    width: 20px;
+    display: inline-block;
+}
+.js-like-btn{
+    display: flex;
+    align-items: center;
+}
+.js-like-p{
+    padding-left: 20px;
+    margin-left: -20px;
 }
 @media screen and (max-width: 1200px) {
     .mainContainer,#header{
