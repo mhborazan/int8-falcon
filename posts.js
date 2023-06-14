@@ -1,29 +1,11 @@
-var posts = [
-  {
-    title: "Carlos Olmarez ",
-    date: "10.02.2023",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure harum numquam suscipit in animi aspernatur cumque possimus at consectetur, neque, consequatur voluptates laborum dicta placeat! Quibusdam quos molestiae dolore architecto",
-    likeCount: 0,
-    commentsCount: 0,
-    comments: ["Comment 1", "Comment 2", "Comment 3"],
-  },
-  {
-    title: "Ali Haydar ",
-    date: "10.02.2023",
-    content: "Another content",
-    likeCount: 10,
-    commentsCount: 3,
-    comments: ["Comment 1", "Comment 2", "Comment 3"],
-  },
-];
+var posts = [];
 
 function renderPosts() {
   document.getElementById("posts").innerHTML = "";
-  posts.forEach(function (post) {
+  posts.forEach(function (post, i) {
     var commentsHtml = ``;
 
-    post.comments.forEach(function (comment, i) {
+    post.comments.forEach(function (comment) {
       commentsHtml += `
         <div class="singleComment">
         <img
@@ -52,7 +34,7 @@ function renderPosts() {
 <span class="text active">${post.title}</span>
 created a post
 </span>
-        <span class="date"> ${post.date} </span>
+        <span class="date">${post.date}</span>
     </div>
 </div>
 <div class="content">
@@ -63,11 +45,11 @@ created a post
         <span>${post.likeCount}</span> Likes
     </div>
     <div class="countinfo">
-        <span >${post.commentsCount}</span> Comments
+        <span >${post.comments.length}</span> Comments
     </div>
 </div>
 <div class="buttons">
-    <button class="btn btn-like">❤️ Like</button>
+    <button class="btn btn-like" >❤️ Like</button>
     <button class="btn btn-like">💬 Comment</button>
     <button class="btn btn-like">💬 Share</button>
 </div>
@@ -77,7 +59,7 @@ created a post
             alt=""
             class="avatar"
     />
-    <input type="text" class="input comment createComment" placeholder="Write Comment"/>
+    <input type="text" data-postid="${i}" class="input comment createComment" placeholder="Write Comment"/>
 </div>
 <div id="commentsOf${i}" class="comments">
 ${commentsHtml}
@@ -91,4 +73,35 @@ ${commentsHtml}
   });
 }
 
+function loadPosts() {
+  if (localStorage.getItem("posts") === null) {
+    let posts = [];
+    localStorage.setItem("posts", JSON.stringify(posts));
+  }
+
+  let postsFromLocal = localStorage.getItem("posts");
+  return JSON.parse(postsFromLocal);
+}
+
+function savePosts() {
+  localStorage.setItem("posts", JSON.stringify(posts));
+}
+
 renderPosts();
+document.body.addEventListener("keypress", function (event) {
+  if (event.target.classList.contains("createComment")) {
+    if (event.key === "Enter") {
+      let postIndex = event.target.getAttribute("data-postid");
+      let commentContent = event.target.value;
+      if (commentContent.trim() !== "") {
+        posts[postIndex].comments.unshift(commentContent);
+        renderPosts();
+        savePosts();
+      }
+    }
+  }
+});
+window.addEventListener("DOMContentLoaded", (event) => {
+  posts = loadPosts();
+  renderPosts();
+});
