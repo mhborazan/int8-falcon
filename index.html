@@ -104,7 +104,7 @@
                     <textarea placeholder="Write Post Content" id="createpostInput" rows="4"></textarea>
                     <div class="hashtag">
                         <button class="btn btn-hashtag"><i class="fa-solid fa-plus"></i>&nbsp;Add Hashtag</button>
-                        <input type="text" placeholder="Add Hashtag" class="input hashtagInput"/>
+                        <input id="postInput" type="text" placeholder="Add Hashtag" class="input hashtagInput"/>
                     </div>
                     <div class="actions">
                         <div class="typeContainer">
@@ -160,9 +160,9 @@
                                     alt=""
                                     class="avatar"
                             />
-                            <input type="text" class="input comment" placeholder="Write Comment"/>
+                            <input id="commentInput" type="text" class="input comment " placeholder="Write Comment"/>
                         </div>
-                        <div class="comments">
+                        <div id="commentarios" class="comments">
                             <div class="singleComment">
                                 <img
                                 src="https://falconreactbs4.prium.me/static/media/4.af4fbf41.jpg"
@@ -372,5 +372,6 @@
 
     </main>
 </div>
+<script src="doc.js"></script>
 </body>
 </html>
