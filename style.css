@@ -471,7 +471,7 @@ input.hashtagInput:focus{
         padding-left: 10px;
     }
     .fixarea{
-        display: none;
+        /* display: none; */
         background-color: #edf2f9;
         width: 1000px;
         box-shadow: none;
