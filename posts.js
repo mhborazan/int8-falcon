@@ -1,75 +1,67 @@
 var posts = [];
 
 function renderPosts() {
-  document.getElementById("posts").innerHTML = "";
+  var postsContainer = document.getElementById("posts");
+  postsContainer.innerHTML = "";
+
   posts.forEach(function (post, i) {
-    var commentsHtml = ``;
+    var commentsHtml = "";
 
     post.comments.forEach(function (comment) {
       commentsHtml += `
         <div class="singleComment">
-        <img
-        src="https://falconreactbs4.prium.me/static/media/4.af4fbf41.jpg"
-        class="avatar small"/>
-        <div class="commentContent p-10">
-                ${comment}
+          <img src="https://falconreactbs4.prium.me/static/media/4.af4fbf41.jpg" class="avatar small"/>
+          <div class="commentContent p-10">
+            ${comment}
+          </div>
         </div>
-    </div>
-    `;
+      `;
     });
-    console.log(commentsHtml);
 
     var postSkeleton = `
-<div class="post box">
-<div class="cardheader">
-    <div class="avatar">
-        <img
-                src="https://falconreactbs4.prium.me/static/media/3.cb95ae1b.jpg"
-                alt=""
-                class="avatar"
-        />
-    </div>
-    <div class="info">
-<span class="info-top">
-<span class="text active">${post.title}</span>
-created a post
-</span>
-        <span class="date">${post.date}</span>
-    </div>
-</div>
-<div class="content">
-   ${post.content}
-</div>
-<div class="meta">
-    <div class="countinfo">
-        <span>${post.likeCount}</span> Likes
-    </div>
-    <div class="countinfo">
-        <span >${post.comments.length}</span> Comments
-    </div>
-</div>
-<div class="buttons">
-    <button class="btn btn-like" >❤️ Like</button>
-    <button class="btn btn-like">💬 Comment</button>
-    <button class="btn btn-like">💬 Share</button>
-</div>
-<div class="sendComment">
-    <img
-            src="https://falconreactbs4.prium.me/static/media/3.cb95ae1b.jpg"
-            alt=""
-            class="avatar"
-    />
-    <input type="text" data-postid="${i}" class="input comment createComment" placeholder="Write Comment"/>
-</div>
-<div id="commentsOf${i}" class="comments">
-${commentsHtml}
-    <div class="commentInfo">
-       Load more comments</div>
-</div>
-</div>`;
+      <div class="post box">
+        <div class="cardheader">
+          <div class="avatar">
+            <img src="https://falconreactbs4.prium.me/static/media/3.cb95ae1b.jpg" alt="" class="avatar" />
+          </div>
+          <div class="info">
+            <span class="info-top">
+              <span class="text active">${post.title}</span>
+              created a post
+            </span>
+            <span class="date">${post.date}</span>
+          </div>
+        </div>
+        <div class="content">
+          ${post.content}
+        </div>
+        <div class="meta">
+          <div class="countinfo">
+            <span>${post.likeCount}</span> Likes
+          </div>
+          <div class="countinfo">
+            <span>${post.comments.length}</span> Comments
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="btn btn-like">❤️ Like</button>
+          <button class="btn btn-like">💬 Comment</button>
+          <button class="btn btn-like">💬 Share</button>
+        </div>
+        <div class="sendComment">
+          <img src="https://falconreactbs4.prium.me/static/media/3.cb95ae1b.jpg" alt="" class="avatar" />
+          <input type="text" data-postid="${i}" class="input comment createComment" placeholder="Write Comment" />
+        </div>
+        <div id="commentsOf${i}" class="comments">
+          ${commentsHtml}
+          <div class="commentInfo">
+            Load more comments
+          </div>
+        </div>
+      </div>
+    `;
 
-    document.getElementById("posts").innerHTML =
-      document.getElementById("posts").innerHTML + postSkeleton;
+    postsContainer.innerHTML += postSkeleton;
   });
 }
 
@@ -88,6 +80,7 @@ function savePosts() {
 }
 
 renderPosts();
+
 document.body.addEventListener("keypress", function (event) {
   if (event.target.classList.contains("createComment")) {
     if (event.key === "Enter") {
@@ -104,4 +97,24 @@ document.body.addEventListener("keypress", function (event) {
 window.addEventListener("DOMContentLoaded", (event) => {
   posts = loadPosts();
   renderPosts();
+});
+
+document.getElementById("createPostButton").addEventListener("click", function () {
+  let postTitle = "Estefania Larreategui"; //  como agregar nombre de persona¿?¿?
+  let postContent = document.getElementById("createpostInput").value;
+  if (postContent.trim() !== ""){
+  // crear un objeto de post
+  let newPost = {
+    title: postTitle,
+    content: postContent,
+    comments: [],
+    likeCount: 0,
+    date: new Date().toLocaleString() // fecha actual formateada best practice¿?
+  };
+  
+  posts.unshift(newPost);
+  document.getElementById("createpostInput").value = "";//clear input
+  renderPosts();
+  savePosts();
+  }
 });
