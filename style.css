@@ -251,6 +251,11 @@ div.hashtag{
     background-color: #b0d0e7;
 }
 
+.js-follow-btn {
+    background-color: #2c7be5;
+    color: #d8e2ef;
+}
+
 .btn-icon{
     font-size: 20px;
     color: gray;
