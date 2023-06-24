@@ -303,6 +303,9 @@ div.hashtag{
 #leftmenu .collapse.show{
     display:block;
 }
+.arrow-rotate {
+    transform: rotate(-180deg);
+}
 .post .content{
     padding: 20px;
 }
