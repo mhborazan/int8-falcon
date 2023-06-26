@@ -5,8 +5,13 @@
     <title>Falcon</title>
     <link rel="stylesheet" href="reset.css"/>
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="modal.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+ 
     <body>
 <div class="mainContainer">
     <div id="header">
@@ -108,9 +113,9 @@
                     </div>
                     <div class="actions">
                         <div class="typeContainer">
-                            <button class="btn btn-flat"><i class="fa-solid fa-image"></i><span> Image</span></button>
+                            <button class="btn btn-flat"><i class="fa-solid fa-image"></i><span id="imageBtn"> Image</span></button> <input id="imageSelectInput" style="  position: absolute !important;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);" accept="image/*" type="file">
                             <button class="btn btn-flat"><i class="fa-solid fa-calendar-plus"></i> <span>Event</span></button>
-                            <button class="btn btn-flat"><i class="fa-solid fa-location-dot"></i> <span>Check In</span></button>
+                            <button class="btn btn-flat"><i class="fa-solid fa-location-dot"></i> <span id="mapBtn">Check In</span></button>
                         </div>
                         <div class="share">
                             <button  id= "createPostButton" class="btn btn-blue">Share</button>
@@ -209,6 +214,17 @@
             </div>
 
     </main>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div id='map' style='width: 100%; height: 90%;'></div>
+
+        </div>
+      
+      </div>
+
 </div>
 <!-- <script src="doc.js"></script> -->
 <script src="posts.js"></script>

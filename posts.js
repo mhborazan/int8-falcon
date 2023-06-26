@@ -99,22 +99,100 @@ window.addEventListener("DOMContentLoaded", (event) => {
   renderPosts();
 });
 
-document.getElementById("createPostButton").addEventListener("click", function () {
-  let postTitle = "Estefania Larreategui"; //  como agregar nombre de persona¿?¿?
-  let postContent = document.getElementById("createpostInput").value;
-  if (postContent.trim() !== ""){
-  // crear un objeto de post
-  let newPost = {
-    title: postTitle,
-    content: postContent,
-    comments: [],
-    likeCount: 0,
-    date: new Date().toLocaleString() // fecha actual formateada best practice¿?
+document
+  .getElementById("createPostButton")
+  .addEventListener("click", function () {
+    let postTitle = "Estefania Larreategui"; //  como agregar nombre de persona¿?¿?
+    let postContent = document.getElementById("createpostInput").value;
+    if (postContent.trim() !== "") {
+      // crear un objeto de post
+      let newPost = {
+        title: postTitle,
+        content: postContent,
+        comments: [],
+        likeCount: 0,
+        date: new Date().toLocaleString(), // fecha actual formateada best practice¿?
+      };
+      if (imagePost.length > 5) {
+        newPost.content = newPost.content + "<br><br>" + imagePost;
+        imagePost = "";
+      }
+      if (mapPost.length > 5) {
+        newPost.content = newPost.content + "<br><br>" + mapPost;
+        mapPost = "";
+      }
+
+      posts.unshift(newPost);
+      document.getElementById("createpostInput").value = ""; //clear input
+      renderPosts();
+      savePosts();
+    }
+  });
+
+document.getElementById("imageBtn").addEventListener("click", function () {
+  document.getElementById("imageSelectInput").click();
+});
+
+let imagePost = "";
+let mapPost = "";
+document
+  .getElementById("imageSelectInput")
+  .addEventListener("change", function (e) {
+    let files = document.getElementById("imageSelectInput").files;
+    const reader = new FileReader();
+    reader.addEventListener("load", (event) => {
+      imagePost = "<img src='" + event.target.result + "' width='300'>";
+    });
+    reader.readAsDataURL(files[0]);
+  });
+
+function getBase64(file) {
+  console.log(file);
+  var reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = function () {
+    return reader.result;
   };
-  
-  posts.unshift(newPost);
-  document.getElementById("createpostInput").value = "";//clear input
-  renderPosts();
-  savePosts();
+  reader.onerror = function (error) {
+    console.log("Error: ", error);
+  };
+}
+let map;
+//Map Share
+document.getElementById("mapBtn").addEventListener("click", function () {
+  modal.style.display = "block";
+  map = new mapboxgl.Map({
+    container: "map", // container ID
+    style: "mapbox://styles/mapbox/streets-v12", // style URL
+    center: [28, 41], // starting position [lng, lat]
+    zoom: 8, // starting zoom
+  });
+  const marker = new mapboxgl.Marker({
+    draggable: true,
+  })
+    .setLngLat([28, 41])
+    .addTo(map);
+
+  marker.on("dragend", onDragEnd);
+  function onDragEnd() {
+    const lngLat = marker.getLngLat();
+    mapPost = `
+    <iframe
+    width="100%"
+    height="400px"
+    src='https://api.mapbox.com/styles/v1/mapbox/streets-v12.html?title=false&zoomwheel=true&access_token=pk.eyJ1IjoieW91Ymxvc3NvbSIsImEiOiJjbGdkdmJtbXUwOHB3M2xwN3ZkZmxyY2ZkIn0.i_oCYBV9t_JAQZfhyft-DA#12/${lngLat.lat}/${lngLat.lng}'
+    title="Streets"
+    style="border:none;"
+  ></iframe>
+    `;
   }
 });
+mapboxgl.accessToken =
+  "pk.eyJ1IjoieW91Ymxvc3NvbSIsImEiOiJjbGdkdmJtbXUwOHB3M2xwN3ZkZmxyY2ZkIn0.i_oCYBV9t_JAQZfhyft-DA";
+
+//Modal JS
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function () {
+  modal.style.display = "none";
+};
