@@ -213,10 +213,16 @@ followBtn.forEach((btn) => {
     if (e.target.classList.contains("js-follow-btn")) {
       e.target.classList.remove("js-follow-btn");
       e.target.innerHTML = followBtnIcon;
-      
+
     } else {
       e.target.classList.add("js-follow-btn");
       e.target.innerText = "Followed"
     }
   });
 });
+
+//Hashtag Focus
+var focusHasthtag = document.getElementsByClassName("btn-hashtag")
+var hashtagContent = documen.getElementsByClassName("hashtagInput")
+
+focusHasthtag[0].addEventListener("click", () => hashtagContent[0].focus())
