@@ -275,7 +275,7 @@ div.hashtag {
     border: 1px groove var(--light-gray);
     background-color:var(--secondary-color);
     border-radius: 3px;
-    color: #5e6e82;
+    color: var(--text-color);
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
