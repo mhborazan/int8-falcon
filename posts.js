@@ -196,3 +196,12 @@ var span = document.getElementsByClassName("close")[0];
 span.onclick = function () {
   modal.style.display = "none";
 };
+
+//Hashtag Focus
+var focusHashtag = document.getElementsByClassName("btn-hashtag");
+var hashtagContent = document.getElementsByClassName("hashtagInput");
+
+focusHashtag[0].addEventListener("click", () => {
+  hashtagContent[0].focus();
+});
+

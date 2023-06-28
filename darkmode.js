@@ -6,7 +6,7 @@ btnSwitch.addEventListener("click", () => {
     const isLightMode = getComputedStyle(r).getPropertyValue("--main-color") == "#edf2f9";
     if (isLightMode) {
         r.style.setProperty('--main-color', '#0e1c2f')
-        r.style.setProperty('--secondary-color', '#132238')
+        r.style.setProperty('--secondary-color', '#132248')
         r.style.setProperty('--light-gray', '#b6c1d2')
         r.style.setProperty('--white-color', '#0e1c2f')
         r.style.setProperty("--text-color", "white")

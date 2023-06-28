@@ -208,7 +208,7 @@ img.avatar {
 
 textarea {
     font-size: 1.5rem;
-    color: #344050;
+    color: var(--text-color);
     padding: 10px;
     border: unset;
     font-family: Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -347,6 +347,7 @@ div.hashtag {
 
 .post .content {
     padding: 20px;
+    
 }
 
 .post .meta {
