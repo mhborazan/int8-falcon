@@ -4,7 +4,7 @@
     --input-border: #afe7ff;
     --main-color: #edf2f9;
     --secondary-color: #f9fafd;
-    --light-gray: lightgray;
+    --light-gray: #0e1c2f;
     --white-color: white;
     --text-color:black;
 
@@ -16,13 +16,32 @@ body {
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
 }
-
+.d-none{
+    display: none;
+}
 .mainContainer {
     width: 1400px;
     margin: auto;
     margin-bottom: 50px;
 }
+.preview{
+    padding: 15px;
+}
+.preview img {
+    max-height: 100px;
+    border-radius: 10px;
 
+}
+.preview button {
+    position: relative;
+    transform: translateY(-90px) translateX(-10px) scale(1.5);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
 #header {
     padding: 10px;
     position: fixed;

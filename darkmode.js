@@ -33,7 +33,7 @@ function changeTheme(mode) {
   } else if (mode == "light") {
     r.style.setProperty("--main-color", "#edf2f9");
     r.style.setProperty("--secondary-color", "#f9fafd");
-    r.style.setProperty("--light-gray", " lightgray");
+    r.style.setProperty("--light-gray", " #0e1c2f");
     r.style.setProperty("--white-color", " white");
     r.style.setProperty("--text-color", "black");
   }

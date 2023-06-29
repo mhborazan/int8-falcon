@@ -149,9 +149,17 @@ document
     const reader = new FileReader();
     reader.addEventListener("load", (event) => {
       imagePost = "<img src='" + event.target.result + "' width='300'>";
+      document.getElementById("imgPreview").src = event.target.result;
+      document.getElementById("imgPreviewDiv").classList.remove("d-none");
     });
     reader.readAsDataURL(files[0]);
   });
+
+document.getElementById("removeImg").addEventListener("click", function () {
+  imagePost = "";
+  mapPost = "";
+  document.getElementById("imgPreviewDiv").classList.add("d-none");
+});
 
 function getBase64(file) {
   console.log(file);
@@ -192,6 +200,8 @@ document.getElementById("mapBtn").addEventListener("click", function () {
     style="border:none;"
   ></iframe>
     `;
+    document.getElementById("imgPreview").src = "map.jpg";
+    document.getElementById("imgPreviewDiv").classList.remove("d-none");
   }
 });
 mapboxgl.accessToken =
