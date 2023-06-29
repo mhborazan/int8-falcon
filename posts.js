@@ -44,7 +44,10 @@ function renderPosts() {
           </div>
         </div>
         <div class="buttons">
-          <button class="btn btn-like">❤️ Like</button>
+        <button class="btn btn-like js-like-btn" onClick={liker(${i})}>
+          <img src="./assets/${post.likeCount==0?"like button unclicked":"like-button-clicked"}.png" class="js-like-symbol" alt="">
+        <p class="js-like-p">Like</p>
+        </button>
           <button class="btn btn-like">💬 Comment</button>
           <button class="btn btn-like">💬 Share</button>
         </div>
@@ -223,6 +226,19 @@ followBtn.forEach((btn) => {
 
 //Hashtag Focus
 var focusHasthtag = document.getElementsByClassName("btn-hashtag")
-var hashtagContent = documen.getElementsByClassName("hashtagInput")
+var hashtagContent = document.getElementsByClassName("hashtagInput")
 
 focusHasthtag[0].addEventListener("click", () => hashtagContent[0].focus())
+//like
+ function liker(postIndex){
+  if (posts[postIndex].likeCount == 0) {
+    posts[postIndex].likeCount++;
+  } else {
+    posts[postIndex].likeCount--;
+  }
+
+  renderPosts();
+  savePosts();
+  
+  
+ }

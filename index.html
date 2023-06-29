@@ -1,234 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <title>Falcon</title>
-    <link rel="stylesheet" href="reset.css"/>
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="modal.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="modal.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+        integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
-<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
- 
-    <body>
-<div class="mainContainer">
-    <div id="header">
-        <div class="header-left">
-            <i class="fa-solid fa-bars"></i>
-            <img
-                    src="https://falconreactbs4.prium.me/static/media/falcon.920a9ff0.png"
-                    alt=""
-                    srcset=""
-            />
-            <h4>falcon</h4>
+    <script
+        src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css"
+        type="text/css">
+
+<body>
+    <div class="mainContainer">
+        <div id="header">
+            <div class="header-left">
+                <i class="fa-solid fa-bars"></i>
+                <img src="https://falconreactbs4.prium.me/static/media/falcon.920a9ff0.png" alt="" srcset="" />
+                <h4>falcon</h4>
+            </div>
+
+            <div class="header-right">
+                <div class="searchGroup">
+                    <i class="fa-solid fa-magnifying-glass searchIcon"></i>
+                    <input autocomplete="off" type="search" id="search" class="typeText" placeholder="Search" />
+                </div>
+                <div class="button-group buttons">
+                    <button class="btn btn-icon" id="oscuro"><i class="fa-solid fa-moon"></i></button>
+                    <button class="btn btn-icon"><i class="fa-solid fa-cart-shopping"></i></button>
+                    <button class="btn btn-icon"><i class="fa-solid fa-bell"></i></button>
+                </div>
+            </div>
         </div>
-
-        <div class="header-right">
-            <div class="searchGroup">
-                <i class="fa-solid fa-magnifying-glass searchIcon"></i>
-                <input autocomplete="off" type="search" id="search" class="typeText" placeholder="Search"/>
-            </div>
-            <div class="button-group">
-                <button class="btn btn-icon" id="oscuro"><i class="fa-solid fa-moon"></i></button>
-                <button class="btn btn-icon"><i class="fa-solid fa-cart-shopping"></i></button>
-                <button class="btn btn-icon"><i class="fa-solid fa-bell"></i></button>
-            </div>
+        <div class="fixarea">
+            <section id="leftmenu">
+                <ul class="nav menu">
+                    <li class="active">
+                        <a href="#" class="js-left-menu-home"><span class="menu-title"><i
+                                    class="fa-solid fa-house"></i>Home</span> <i
+                                class="fa-solid fa-chevron-down"></i></a>
+                        <div class="collapse">
+                            <ul class="submenu">
+                                <li class="menu-item">Dashboard</li>
+                                <li class="menu-item active">Feed</li>
+                                <li class="menu-item">Landing</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#"><span class="menu-title"><i class="fa-solid fa-file"></i>Pages</span> <i
+                                class="fa-solid fa-chevron-down"></i></a>
+                        <div class="collapse">
+                            <ul class="submenu">
+                                <li class="menu-item">Dashboard</li>
+                                <li class="menu-item">Feed</li>
+                                <li class="menu-item">Landing</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#"><span class="menu-title"><i class="fa-solid fa-comments"></i>Chat</span> <i
+                                class="fa-solid fa-chevron-down"></i></a>
+                        <div class="collapse">
+                            <ul class="submenu">
+                                <li class="menu-item">Dashboard</li>
+                                <li class="menu-item">Feed</li>
+                                <li class="menu-item">Landing</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#"><span class="menu-title"><i class="fa-solid fa-table"></i>Kanban</span> <i
+                                class="fa-solid fa-chevron-down"></i></a>
+                        <div class="collapse">
+                            <ul class="submenu">
+                                <li class="menu-item">Dashboard</li>
+                                <li class="menu-item">Feed</li>
+                                <li class="menu-item">Landing</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#"><span class="menu-title"><i class="fa-solid fa-calendar"></i>Calendar</span> <i
+                                class="fa-solid fa-chevron-down"></i></a>
+                        <div class="collapse">
+                            <ul class="submenu">
+                                <li class="menu-item">Dashboard</li>
+                                <li class="menu-item">Feed</li>
+                                <li class="menu-item">Landing</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </section>
         </div>
+        <main id="content">
+
+            <div id="page">
+                <div id="timeline">
+                    <div id="createpost" class="box">
+                        <div class="cardheader">
+                            <img src="https://falconreactbs4.prium.me/static/media/3.cb95ae1b.jpg" alt=""
+                                class="avatar" />
+                            <span>Create Post</span>
+                        </div>
+                        <textarea placeholder="Write Post Content" id="createpostInput" rows="4"></textarea>
+                        <div class="hashtag">
+                            <button class="btn btn-hashtag"><i class="fa-solid fa-plus"></i>&nbsp;Add Hashtag</button>
+                            <input id="postInput" type="text" placeholder="Add Hashtag" class="input hashtagInput" />
+                        </div>
+                        <div class="actions">
+                            <div class="typeContainer">
+                                <button class="btn btn-flat"><i class="fa-solid fa-image"></i><span id="imageBtn">
+                                        Image</span></button> <input id="imageSelectInput"
+                                    style="  position: absolute !important;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);"
+                                    accept="image/*" type="file">
+                                <button class="btn btn-flat"><i class="fa-solid fa-calendar-plus"></i>
+                                    <span>Event</span></button>
+                                <button class="btn btn-flat"><i class="fa-solid fa-location-dot"></i> <span
+                                        id="mapBtn">Check In</span></button>
+                            </div>
+                            <div class="share">
+                                <button id="createPostButton" class="btn btn-blue">Share</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="posts">
+
+
+                    </div>
+                </div>
+                <div id="rightbar">
+                    <div id="notification" class="box p-15">
+                        <span class="m-10"><i class="fa-solid fa-gift"></i> You have new follower</span>
+                    </div>
+                    <div id="follow" class="box ">
+                        <div class="cardheader">
+                            <h3>Follow People</h3>
+                        </div>
+                        <div class="personFollow p-15">
+                            <div class="avatar"><img class="follow-avatar"
+                                    src="https://falconreactbs4.prium.me/static/media/1.38f0341f.jpg" alt=""></div>
+
+                            <div class="info">
+                                <span class="name"> Ali Haydar GÜLEÇ </span>
+                                <button class="btn-follow"><i class="fa-solid fa-user-plus"></i> Follow</button>
+                            </div>
+                        </div>
+                        <div class="personFollow  p-15">
+                            <div class="avatar"><img class="follow-avatar"
+                                    src="https://falconreactbs4.prium.me/static/media/1.38f0341f.jpg" alt=""></div>
+                            <div class="info">
+                                <span class="name"> Ali Haydar GÜLEÇ </span>
+                                <button class="btn-follow"><i class="fa-solid fa-user-plus"></i> Follow</button>
+                            </div>
+                        </div>
+                        <div class="personFollow  p-15">
+                            <div class="avatar"><img class="follow-avatar"
+                                    src="https://falconreactbs4.prium.me/static/media/1.38f0341f.jpg" alt=""></div>
+
+                            <div class="info">
+                                <span class="name"> Ali Haydar GÜLEÇ </span>
+                                <button class="btn-follow"><i class="fa-solid fa-user-plus"></i> Follow</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="interests" class="box ">
+                        <div class="cardheader">
+                            <h3>Upcoming Events</h3>
+                        </div>
+                        <div class="event p-15">
+                            <div class="date">
+                                <span class="month">Jul</span>
+                                <span class="day">7</span>
+                            </div>
+                            <div class="info">
+                                <span class="title"> Develhope Checkpoint </span>
+                                <p class="detail">Get ready to Rock, WillRock!</p>
+                            </div>
+                        </div>
+                        <div class="event p-15">
+                            <div class="date">
+                                <span class="month">Jul</span>
+                                <span class="day">27</span>
+                            </div>
+                            <div class="info">
+                                <span class="title"> Develhope Checkpoint </span>
+                                <p class="detail">Get ready to Rock, WillRock!</p>
+                            </div>
+                        </div>
+                        <div class="event p-15">
+                            <div class="date">
+                                <span class="month">Jun</span>
+                                <span class="day">11</span>
+                            </div>
+                            <div class="info">
+                                <span class="title"> Develhope Checkpoint </span>
+                                <p class="detail">Get ready to Rock, WillRock!</p>
+                            </div>
+                        </div>
+                        <div class="event p-15">
+                            <div class="date">
+                                <span class="month">Aug</span>
+                                <span class="day">4</span>
+                            </div>
+                            <div class="info">
+                                <span class="title"> Develhope Checkpoint </span>
+                                <p class="detail">Get ready to Rock, WillRock!</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="footer">
+                    <span>
+                        Thank you for copying Falcon | 2023 © Random Group
+                    </span>
+                    <span>v1.0</span>
+                </div>
+
+        </main>
     </div>
-    <div class="fixarea">
-        <section id="leftmenu">
-            <ul class="nav menu">
-                <li class="active">
-                    <a href="#"><span class="menu-title"><i class="fa-solid fa-house"></i>Home</span> <i class="fa-solid fa-chevron-down"></i></a>
-                    <div class="collapse show">
-                        <ul class="submenu">
-                            <li class="menu-item">Dashboard</li>
-                            <li class="menu-item active">Feed</li>
-                            <li class="menu-item">Landing</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a href="#"><span class="menu-title"><i class="fa-solid fa-file"></i>Pages</span> <i class="fa-solid fa-chevron-down"></i></a>
-                    <div class="collapse">
-                        <ul class="submenu">
-                            <li class="menu-item">Dashboard</li>
-                            <li class="menu-item">Feed</li>
-                            <li class="menu-item">Landing</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a href="#"><span class="menu-title"><i class="fa-solid fa-comments"></i>Chat</span> <i class="fa-solid fa-chevron-down"></i></a>
-                    <div class="collapse">
-                        <ul class="submenu">
-                            <li class="menu-item">Dashboard</li>
-                            <li class="menu-item">Feed</li>
-                            <li class="menu-item">Landing</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a href="#"><span class="menu-title"><i class="fa-solid fa-table"></i>Kanban</span> <i class="fa-solid fa-chevron-down"></i></a>
-                    <div class="collapse">
-                        <ul class="submenu">
-                            <li class="menu-item">Dashboard</li>
-                            <li class="menu-item">Feed</li>
-                            <li class="menu-item">Landing</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a href="#"><span class="menu-title"><i class="fa-solid fa-calendar"></i>Calendar</span> <i class="fa-solid fa-chevron-down"></i></a>
-                    <div class="collapse">
-                        <ul class="submenu">
-                            <li class="menu-item">Dashboard</li>
-                            <li class="menu-item">Feed</li>
-                            <li class="menu-item">Landing</li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </section>
-    </div>
-    <main id="content">
-
-        <div id="page">
-            <div id="timeline">
-                <div id="createpost" class="box">
-                    <div class="cardheader">
-                        <img
-                                src="https://falconreactbs4.prium.me/static/media/3.cb95ae1b.jpg"
-                                alt=""
-                                class="avatar"
-                        />
-                        <span>Create Post</span>
-                    </div>
-                    <textarea placeholder="Write Post Content" id="createpostInput" rows="4"></textarea>
-                    <div class="hashtag">
-                        <button class="btn btn-hashtag"><i class="fa-solid fa-plus"></i>&nbsp;Add Hashtag</button>
-                        <input id="postInput" type="text" placeholder="Add Hashtag" class="input hashtagInput"/>
-                    </div>
-                    <div class="actions">
-                        <div class="typeContainer">
-                            <button class="btn btn-flat"><i class="fa-solid fa-image"></i><span id="imageBtn"> Image</span></button> <input id="imageSelectInput" style="  position: absolute !important;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);" accept="image/*" type="file">
-                            <button class="btn btn-flat"><i class="fa-solid fa-calendar-plus"></i> <span>Event</span></button>
-                            <button class="btn btn-flat"><i class="fa-solid fa-location-dot"></i> <span id="mapBtn">Check In</span></button>
-                        </div>
-                        <div class="share">
-                            <button  id= "createPostButton" class="btn btn-blue">Share</button>
-                        </div>
-                    </div>
-                </div>
-                <div id="posts">
-              
-
-                </div>
-            </div>
-            <div id="rightbar">
-                <div id="notification" class="box p-15">
-                    <span class="m-10"><i class="fa-solid fa-gift"></i> You have new follower</span>
-                </div>
-                <div id="follow" class="box ">
-                    <div class="cardheader">
-                        <h3>Follow People</h3>
-                    </div>
-                    <div class="personFollow p-15">
-                        <div class="avatar"><img class="follow-avatar" src="https://falconreactbs4.prium.me/static/media/1.38f0341f.jpg" alt=""></div>
-
-                        <div class="info">
-                            <span class="name"> Ali Haydar GÜLEÇ </span>
-                            <button class="btn-follow"><i class="fa-solid fa-user-plus"></i> Follow</button>
-                        </div>
-                    </div>
-                    <div class="personFollow  p-15">
-                        <div class="avatar"><img class="follow-avatar" src="https://falconreactbs4.prium.me/static/media/1.38f0341f.jpg" alt=""></div>
-                        <div class="info">
-                            <span class="name"> Ali Haydar GÜLEÇ </span>
-                            <button class="btn-follow"><i class="fa-solid fa-user-plus"></i> Follow</button>
-                        </div>
-                    </div>
-                    <div class="personFollow  p-15">
-                        <div class="avatar"><img class="follow-avatar" src="https://falconreactbs4.prium.me/static/media/1.38f0341f.jpg" alt=""></div>
-
-                        <div class="info">
-                            <span class="name"> Ali Haydar GÜLEÇ </span>
-                            <button class="btn-follow"><i class="fa-solid fa-user-plus"></i> Follow</button>
-                        </div>
-                    </div>
-                </div>
-                <div id="interests" class="box ">
-                    <div class="cardheader">
-                        <h3>Upcoming Events</h3>
-                    </div>
-                    <div class="event p-15">
-                        <div class="date">
-                            <span class="month">Jul</span>
-                            <span class="day">7</span>
-                        </div>
-                        <div class="info">
-                            <span class="title"> Develhope Checkpoint </span>
-                            <p class="detail">Get ready to Rock, WillRock!</p>
-                        </div>
-                    </div>
-                    <div class="event p-15">
-                        <div class="date">
-                            <span class="month">Jul</span>
-                            <span class="day">27</span>
-                        </div>
-                        <div class="info">
-                            <span class="title"> Develhope Checkpoint </span>
-                            <p class="detail">Get ready to Rock, WillRock!</p>
-                        </div>
-                    </div> <div class="event p-15">
-                        <div class="date">
-                            <span class="month">Jun</span>
-                            <span class="day">11</span>
-                        </div>
-                        <div class="info">
-                            <span class="title"> Develhope Checkpoint </span>
-                            <p class="detail">Get ready to Rock, WillRock!</p>
-                        </div>
-                    </div> <div class="event p-15">
-                        <div class="date">
-                            <span class="month">Aug</span>
-                            <span class="day">4</span>
-                        </div>
-                        <div class="info">
-                            <span class="title"> Develhope Checkpoint </span>
-                            <p class="detail">Get ready to Rock, WillRock!</p>
-                        </div>
-                    </div>
-                
-                </div>
-                
-            </div>
-
-            <div id="footer">
-                <span>
-                    Thank you for copying Falcon | 2023 © Random Group
-                </span>
-                <span>v1.0</span>
-            </div>
-
-    </main>
-</div> 
-<script src="darkmode.js"></script>
+    <script src="darkmode.js"></script>
     <div id="myModal" class="modal">
 
         <!-- Modal content -->
         <div class="modal-content">
-          <span class="close">&times;</span>
-          <div id='map' style='width: 100%; height: 90%;'></div>
+            <span class="close">&times;</span>
+            <div id='map' style='width: 100%; height: 90%;'></div>
 
         </div>
-      
-      </div>
 
-</div>
-<!-- <script src="doc.js"></script> -->
-<script src="posts.js"></script>
+    </div>
+
+    </div>
+    <script src="leftMenu.js"></script>
+    <script src="posts.js"></script>
 </body>
+
 </html>
