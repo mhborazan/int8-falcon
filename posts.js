@@ -45,7 +45,11 @@ function renderPosts() {
         </div>
         <div class="buttons">
         <button class="btn btn-like js-like-btn" onClick={liker(${i})}>
-          <img src="./assets/${post.likeCount==0?"like button unclicked":"like-button-clicked"}.png" class="js-like-symbol" alt="">
+          <img src="./assets/${
+            post.likeCount == 0
+              ? "like button unclicked"
+              : "like-button-clicked"
+          }.png" class="js-like-symbol" alt="">
         <p class="js-like-p">Like</p>
         </button>
           <button class="btn btn-like">💬 Comment</button>
@@ -209,28 +213,27 @@ focusHashtag[0].addEventListener("click", () => {
 });
 //Follow button
 let followBtn = document.querySelectorAll(".btn-follow");
-let followBtnIcon = document.querySelector('.btn-follow').innerHTML;
+let followBtnIcon = document.querySelector(".btn-follow").innerHTML;
 
 followBtn.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     if (e.target.classList.contains("js-follow-btn")) {
       e.target.classList.remove("js-follow-btn");
       e.target.innerHTML = followBtnIcon;
-
     } else {
       e.target.classList.add("js-follow-btn");
-      e.target.innerText = "Followed"
+      e.target.innerHTML = "<i class='fa-solid fa-user-check'></i> Followed";
     }
   });
 });
 
 //Hashtag Focus
-var focusHasthtag = document.getElementsByClassName("btn-hashtag")
-var hashtagContent = document.getElementsByClassName("hashtagInput")
+var focusHasthtag = document.getElementsByClassName("btn-hashtag");
+var hashtagContent = document.getElementsByClassName("hashtagInput");
 
-focusHasthtag[0].addEventListener("click", () => hashtagContent[0].focus())
+focusHasthtag[0].addEventListener("click", () => hashtagContent[0].focus());
 //like
- function liker(postIndex){
+function liker(postIndex) {
   if (posts[postIndex].likeCount == 0) {
     posts[postIndex].likeCount++;
   } else {
@@ -239,6 +242,4 @@ focusHasthtag[0].addEventListener("click", () => hashtagContent[0].focus())
 
   renderPosts();
   savePosts();
-  
-  
- }
+}

@@ -1,31 +1,43 @@
 const btnSwitch = document.getElementById("oscuro");
 const r = document.querySelector(":root");
-
+let currentTheme =
+  getComputedStyle(r).getPropertyValue("--main-color") == "#edf2f9"
+    ? "light"
+    : "dark";
+if (localStorage.getItem("theme") === null) {
+  localStorage.setItem("theme", currentTheme);
+} else {
+  currentTheme = localStorage.getItem("theme");
+  changeTheme(currentTheme);
+}
 
 btnSwitch.addEventListener("click", () => {
-    const isLightMode = getComputedStyle(r).getPropertyValue("--main-color") == "#edf2f9";
-    if (isLightMode) {
-        r.style.setProperty('--main-color', '#0e1c2f')
-        r.style.setProperty('--secondary-color', '#132248')
-        r.style.setProperty('--light-gray', '#b6c1d2')
-        r.style.setProperty('--white-color', '#0e1c2f')
-        r.style.setProperty("--text-color", "white")
-    
-        
-    } else {
-        r.style.setProperty('--main-color', '#edf2f9')
-        r.style.setProperty('--secondary-color', '#f9fafd')
-        r.style.setProperty('--light-gray', ' lightgray')
-        r.style.setProperty('--white-color', ' white')
-        r.style.setProperty("--text-color", "black")
-    }
+  if (currentTheme == "light") {
+    changeTheme("dark");
+    localStorage.setItem("theme", "dark");
+    currentTheme = "dark";
+  } else {
+    changeTheme("light");
+    localStorage.setItem("theme", "light");
+    currentTheme = "light";
+  }
+});
 
-
-})
-
-
-    
-
+function changeTheme(mode) {
+  if (mode == "dark") {
+    r.style.setProperty("--main-color", "#0e1c2f");
+    r.style.setProperty("--secondary-color", "#132248");
+    r.style.setProperty("--light-gray", "#b6c1d2");
+    r.style.setProperty("--white-color", "#0e1c2f");
+    r.style.setProperty("--text-color", "white");
+  } else if (mode == "light") {
+    r.style.setProperty("--main-color", "#edf2f9");
+    r.style.setProperty("--secondary-color", "#f9fafd");
+    r.style.setProperty("--light-gray", " lightgray");
+    r.style.setProperty("--white-color", " white");
+    r.style.setProperty("--text-color", "black");
+  }
+}
 
 // :root {
 //   --blue: #2c7be5;
